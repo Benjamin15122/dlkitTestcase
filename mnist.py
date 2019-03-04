@@ -116,7 +116,7 @@ if __name__ == '__main__':
     parser.add_argument('--lr', type=float, default=0.01, help='Learning rate', required=False)
     parser.add_argument('--batch_size', type=int, default=1000, help='Batch size', required=False)
     parser.add_argument('--epochs', type=int, default=20, help='Number of training epochs', required=False)
-    parser.add_argument('--data_dir', type=str, default='data', help='Directory to put training data', required=False)
+    parser.add_argument('--data_dir', type=str, default='/workspace/mnist', help='Directory to put training data', required=False)
     parser.add_argument('--model_dir', type=str, default='model', help='Directory to save models', required=False)
 
     args, unknown = parser.parse_known_args()
