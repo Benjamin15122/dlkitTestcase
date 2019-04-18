@@ -279,8 +279,7 @@ def main(unused_argv):
       local_step += 1
 
       now = time.time()
-      print("%f: Worker %d: training step %d done (global step: %d)" %
-            (now, FLAGS.task_index, local_step, step))
+      print("training step %d done (global step: %d)" % (local_step, step))
 
       if step >= FLAGS.train_steps:
         break
