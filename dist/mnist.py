@@ -283,6 +283,15 @@ def main(unused_argv):
 
       if step >= FLAGS.train_steps:
         break
+  
+    # save model
+    if is_chief:
+      sess.graph._unsafe_unfinalize()
+      saver = tf.train.Saver()
+      save_path = "/workspace/model/mnist.ckpt"
+      saver.save(sess, save_path)
+      print ("Model saved in file: ", save_path)
+      sess.graph.finalize()
 
     time_end = time.time()
     print("Training ends @ %f" % time_end)
