@@ -5,7 +5,9 @@ import math
 HIDDEN_UNITS = 100
 LEARNING_RATE = 0.01
 
-def predict(data):
+def predict(event, context):
+    data = event['data']['data']
+    
     # Define the model
      # Variables of the hidden layer
     hid_w = tf.Variable(
